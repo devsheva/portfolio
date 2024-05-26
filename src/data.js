@@ -37,53 +37,107 @@ export const moreInfo =
  ************************************************************** 
   Add or remove skills in the SAME format below, choose icons here - https://icon-sets.iconify.design/
 */
-export const skillData = [
+const skillData = [];
+
+const buildSkills = (skills) =>
+  skills.forEach((skill, id) =>
+    skillData.push({
+      id,
+      skill: skill.icon,
+      name: skill.name,
+    })
+  );
+
+buildSkills([
   {
-    id: 1,
-    skill: <Icon icon="mdi:language-html5" className="display-4" />,
+    icon: (
+      <Icon
+        icon="mdi:language-ruby-on-rails"
+        color="#b63535"
+        className="display-4"
+      />
+    ),
+    name: "Ruby on Rails",
+  },
+  {
+    icon: <Icon icon="devicon:rspec" className="display-4" />,
+    name: "RSpec",
+  },
+  {
+    icon: <Icon icon="logos:sidekiq-icon" className="display-4" />,
+    name: "Sidekiq",
+  },
+  {
+    icon: <Icon icon="skill-icons:aws-dark" className="display-4" />,
+    name: "AWS",
+  },
+  {
+    icon: <Icon icon="devicon:html5" className="display-4" />,
     name: "HTML5",
   },
   {
-    id: 2,
-    skill: <Icon icon="ion:logo-css3" className="display-4" />,
+    icon: <Icon icon="devicon:css3" className="display-4" />,
     name: "CSS3",
   },
   {
-    id: 3,
-    skill: <Icon icon="fa6-brands:js" className="display-4" />,
+    icon: <Icon icon="devicon:bootstrap" className="display-4" />,
+    name: "Bootstrap",
+  },
+  {
+    icon: <Icon icon="skill-icons:javascript" className="display-4" />,
     name: "JavaScript",
   },
   {
-    id: 4,
-    skill: <Icon icon="ri:bootstrap-fill" className="display-4" />,
-    name: "BootStrap",
+    icon: <Icon icon="devicon:nodejs" className="display-4" />,
+    name: "NodeJS",
   },
   {
-    id: 5,
-    skill: <Icon icon="mdi:react" className="display-4" />,
+    icon: <Icon icon="logos:react" className="display-4" />,
     name: "React",
   },
   {
-    id: 6,
-    skill: <Icon icon="file-icons:styledcomponents" className="display-4" />,
-    name: "Styled Components",
-  },
-  {
-    id: 7,
-    skill: <Icon icon="akar-icons:redux-fill" className="display-4" />,
-    name: "Redux",
-  },
-  {
-    id: 8,
-    skill: <Icon icon="bi:git" className="display-4" />,
+    icon: <Icon icon="devicon:git" className="display-4" />,
     name: "Git",
   },
   {
-    id: 9,
-    skill: <Icon icon="fa6-brands:square-github" className="display-4" />,
-    name: "GitHub",
+    icon: <Icon icon="devicon:docker" className="display-4" />,
+    name: "Docker",
   },
-];
+  {
+    icon: <Icon icon="devicon:csharp" className="display-4" />,
+    name: "C#",
+  },
+  {
+    icon: <Icon icon="logos:dotnet" className="display-4" />,
+    name: ".NET & ASP.NET Core",
+  },
+  {
+    icon: <Icon icon="devicon:python" className="display-4" />,
+    name: "Python",
+  },
+  {
+    icon: <Icon icon="devicon:elixir" className="display-4" />,
+    name: "Elixir (learning) ",
+  },
+  {
+    icon: <Icon icon="devicon:postgresql" className="display-4" />,
+    name: "PostgreSQL",
+  },
+  {
+    icon: <Icon icon="devicon:mysql-wordmark" className="display-4" />,
+    name: "MySQL",
+  },
+  {
+    icon: <Icon icon="devicon:rabbitmq" className="display-4" />,
+    name: "RabbitMQ",
+  },
+  {
+    icon: <Icon icon="devicon:swagger" className="display-4" />,
+    name: "Swagger Documentation",
+  },
+]);
+
+export { skillData };
 
 // Resume link (string - "https://YourResumeUrl") - I am using CloudFront to share my resume (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)
 export const resume = null;
@@ -92,7 +146,11 @@ export const resume = null;
  ************************************************************** 
   List the repo names (string - "your-repo-name") you want to include (they will be sorted alphabetically). If empty, only the first 3 will be included.
 */
-export const filteredProjects = ["example-1", "example-2", "example-3"];
+export const filteredProjects = [
+  "gemini-delete-chat",
+  "example-2",
+  "example-3",
+];
 
 // Replace the defualt GitHub image for matching repos below (images imported above - lines 7-8)
 export const projectCardImages = [
@@ -101,10 +159,3 @@ export const projectCardImages = [
     image: Logo,
   },
 ];
-
-/* Contact Info
- ************************************************************** 
-  Add your formspree endpoint below.
-  https://formspree.io/
-*/
-export const formspreeUrl = "https://formspree.io/f/YourEndpoint";
