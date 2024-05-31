@@ -1,6 +1,5 @@
 {
   "name": "My Portfolio",
-  "homepage": "https://devsheva.github.io/your-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
