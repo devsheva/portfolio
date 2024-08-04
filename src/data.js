@@ -48,6 +48,89 @@ const buildSkills = (skills) =>
     })
   );
 
+const frontendIcons = [
+  {
+    icon: <Icon icon="logos:react" className="display-4" />,
+    name: "React",
+  },
+  {
+    icon: <Icon icon="devicon:html5" className="display-4" />,
+    name: "HTML5",
+  },
+  {
+    icon: <Icon icon="devicon:css3" className="display-4" />,
+    name: "CSS3",
+  },
+  {
+    icon: <Icon icon="devicon:bootstrap" className="display-4" />,
+    name: "Bootstrap",
+  },
+];
+
+const miscellanousIcons = [
+  {
+    icon: <Icon icon="devicon:swagger" className="display-4" />,
+    name: "Swagger Documentation",
+  },
+  {
+    icon: <Icon icon="devicon-plain:jest" className="display-4" />,
+    name: "Jest",
+  },
+];
+
+const nodeIcons = [
+  {
+    icon: <Icon icon="skill-icons:javascript" className="display-4" />,
+    name: "JavaScript",
+  },
+  {
+    icon: <Icon icon="devicon:typescript" className="display-4" />,
+    name: "TypeScript",
+  },
+  {
+    icon: <Icon icon="devicon:denojs" className="display-4" />,
+    name: "Deno",
+  },
+  {
+    icon: <Icon icon="devicon:nodejs" className="display-4" />,
+    name: "NodeJS",
+  },
+];
+
+const sideProjectsIcons = [
+  {
+    icon: <Icon icon="devicon:csharp" className="display-4" />,
+    name: "C#",
+  },
+  {
+    icon: <Icon icon="logos:dotnet" className="display-4" />,
+    name: ".NET & ASP.NET Core",
+  },
+  {
+    icon: <Icon icon="devicon:python" className="display-4" />,
+    name: "Python",
+  },
+  {
+    icon: <Icon icon="devicon:elixir" className="display-4" />,
+    name: "Elixir (learning) ",
+  },
+];
+
+const persistenceIcons = [
+  {
+    icon: <Icon icon="devicon:postgresql" className="display-4" />,
+    name: "PostgreSQL",
+  },
+  {
+    icon: <Icon icon="devicon:mysql-wordmark" className="display-4" />,
+    name: "MySQL",
+  },
+  {
+    icon: <Icon icon="devicon:rabbitmq" className="display-4" />,
+    name: "RabbitMQ",
+  },
+];
+
 buildSkills([
   {
     icon: (
@@ -71,30 +154,9 @@ buildSkills([
     icon: <Icon icon="skill-icons:aws-dark" className="display-4" />,
     name: "AWS",
   },
-  {
-    icon: <Icon icon="devicon:html5" className="display-4" />,
-    name: "HTML5",
-  },
-  {
-    icon: <Icon icon="devicon:css3" className="display-4" />,
-    name: "CSS3",
-  },
-  {
-    icon: <Icon icon="devicon:bootstrap" className="display-4" />,
-    name: "Bootstrap",
-  },
-  {
-    icon: <Icon icon="skill-icons:javascript" className="display-4" />,
-    name: "JavaScript",
-  },
-  {
-    icon: <Icon icon="devicon:nodejs" className="display-4" />,
-    name: "NodeJS",
-  },
-  {
-    icon: <Icon icon="logos:react" className="display-4" />,
-    name: "React",
-  },
+  ...nodeIcons,
+  ...frontendIcons,
+
   {
     icon: <Icon icon="devicon:git" className="display-4" />,
     name: "Git",
@@ -103,38 +165,9 @@ buildSkills([
     icon: <Icon icon="devicon:docker" className="display-4" />,
     name: "Docker",
   },
-  {
-    icon: <Icon icon="devicon:csharp" className="display-4" />,
-    name: "C#",
-  },
-  {
-    icon: <Icon icon="logos:dotnet" className="display-4" />,
-    name: ".NET & ASP.NET Core",
-  },
-  {
-    icon: <Icon icon="devicon:python" className="display-4" />,
-    name: "Python",
-  },
-  {
-    icon: <Icon icon="devicon:elixir" className="display-4" />,
-    name: "Elixir (learning) ",
-  },
-  {
-    icon: <Icon icon="devicon:postgresql" className="display-4" />,
-    name: "PostgreSQL",
-  },
-  {
-    icon: <Icon icon="devicon:mysql-wordmark" className="display-4" />,
-    name: "MySQL",
-  },
-  {
-    icon: <Icon icon="devicon:rabbitmq" className="display-4" />,
-    name: "RabbitMQ",
-  },
-  {
-    icon: <Icon icon="devicon:swagger" className="display-4" />,
-    name: "Swagger Documentation",
-  },
+  ...persistenceIcons,
+  ...miscellanousIcons,
+  ...sideProjectsIcons,
 ]);
 
 export { skillData };
@@ -146,11 +179,7 @@ export const resume = null;
  ************************************************************** 
   List the repo names (string - "your-repo-name") you want to include (they will be sorted alphabetically). If empty, only the first 3 will be included.
 */
-export const filteredProjects = [
-  "gemini-delete-chat",
-  "example-2",
-  "example-3",
-];
+export const filteredProjects = ["gemini-delete-chat", "hn-telegram-bot"];
 
 // Replace the defualt GitHub image for matching repos below (images imported above - lines 7-8)
 export const projectCardImages = [
