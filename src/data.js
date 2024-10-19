@@ -95,6 +95,10 @@ const nodeIcons = [
     icon: <Icon icon="devicon:nodejs" className="display-4" />,
     name: "NodeJS",
   },
+  {
+    icon: <Icon icon="devicon:rust" className="display-4" />,
+    name: "Rust (newbie)",
+  },
 ];
 
 const sideProjectsIcons = [
